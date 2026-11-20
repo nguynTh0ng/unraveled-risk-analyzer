@@ -58,11 +58,15 @@ Labeled dataset
 
 The program always runs in streaming mode. It reads events by chunk, processes them immediately, and does not keep the full dataset in memory.
 
-Install dependencies:
+The analyzer uses the Python standard library. It was verified with Python 3.11.
+
+Download [Dataset.zip (813 MB)](https://github.com/nguynTh0ng/unraveled-risk-analyzer/releases/download/dataset-v1/Dataset.zip) into the project root. Extract it there to create `data/host/`, `data/network/`, and `data/scenarios.json`. The extracted data uses about 4.4 GB of disk space.
 
 ```powershell
-pip install -r requirements.txt
+python -m zipfile -e Dataset.zip .
 ```
+
+The archive packages labeled UNRAVELED logs with the analyzer's scenario definitions. The logs come from [the UNRAVELED project](https://gitlab.com/asu22/unraveled). See the [dataset license](https://gitlab.com/asu22/unraveled/-/blob/master/LICENSE).
 
 Run the default dataset and write reports to `reports`:
 
